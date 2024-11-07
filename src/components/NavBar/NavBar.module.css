@@ -1,0 +1,45 @@
+/* Nav wrapper */
+.Nav_Wrapper {
+    --black: #36383f;
+    --gray: #85888c;
+
+    background-color: var(--black);
+    box-shadow: 1px 1px 5px 0px var(--gray);
+    position: sticky;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    z-index: 10;
+  }
+  
+  .Nav_Wrapper a {
+    --white: #f9f9f9;
+
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    position: relative;
+    color: var(--white);
+  }
+  
+  .Nav_Wrapper a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background-color: var(--accent-color); /* A contrasting color for effect */
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+  }
+  
+  .Nav_Wrapper a:hover::after {
+    transform: scaleX(1); /* Expands the underline on hover */
+  }
