@@ -1,45 +1,128 @@
 /* Nav wrapper */
+
+:root {
+  --white: #f9f9f9;
+  --black: #36383f;
+  --gray: #85888c;
+  --blue: rgb(18, 90, 90);
+}
+
 .Nav_Wrapper {
-    --black: #36383f;
-    --gray: #85888c;
+  --black: #36383f;
+  --gray: #85888c;
 
-    background-color: var(--black);
-    box-shadow: 1px 1px 5px 0px var(--gray);
-    position: sticky;
-    top: 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px;
-    z-index: 10;
-  }
-  
-  .Nav_Wrapper a {
-    --white: #f9f9f9;
+  background-color: var(--black);
+  box-shadow: 1px 1px 5px 0px var(--gray);
+  position: sticky;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  z-index: 10;
+}
 
-    font-family: 'Playfair Display', serif;
-    font-size: 1.3rem;
-    font-weight: bold;
-    text-decoration: none;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    position: relative;
-    color: var(--white);
-  }
-  
-  .Nav_Wrapper a::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background-color: var(--accent-color); /* A contrasting color for effect */
-    transform: scaleX(0);
-    transition: transform 0.3s ease;
-  }
-  
-  .Nav_Wrapper a:hover::after {
-    transform: scaleX(1); /* Expands the underline on hover */
-  }
+.Nav_Wrapper a {
+  --white: #f9f9f9;
+
+  font-family: "Playfair Display", serif;
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  position: relative;
+  color: var(--white);
+}
+
+.Nav_Wrapper a::after {
+  --orange: #ff6347;
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background-color: var(--orange); /* A contrasting color for effect */
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.Nav_Wrapper a:hover::after {
+  transform: scaleX(1); /* Expands the underline on hover */
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Nav menu */
+.nav {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: var(--black);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  transform: translateX(100%);
+  z-index: 20;
+}
+
+.menu a {
+  display: block;
+  padding: 30px;
+  color: var(--white);
+  text-align: center;
+  font-size: 38px;
+}
+
+.menu a:hover {
+  background-color: var(--gray);
+}
+
+.side-menu {
+  display: none;
+}
+
+.side-menu:checked ~ .nav {
+  transform: translateX(0);
+}
+
+/* Hamburger menu */
+.hamb {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 25px;
+  cursor: pointer;
+}
+
+.hamb-line {
+  width: 100%;
+  height: 4px;
+  background-color: var(--white);
+}
+
+/* Close button */
+.close {
+  --white: #f9f9f9;
+  display: block;
+  color: var(--white);
+  font-size: 30px;
+  text-align: right;
+  padding: 20px;
+  cursor: pointer;
+}
+
+.close:hover {
+  --gray: #85888c;
+  color: var(--gray);
+}
