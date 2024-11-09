@@ -1,0 +1,50 @@
+.dance-schedule {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0.3rem;
+  background-color: var(--white);
+}
+
+.dance-schedule h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  color: var(--black);
+}
+
+.table-wrapper {
+  overflow-x: auto; /* Enables horizontal scrolling */
+}
+
+.dance-schedule table {
+  width: 100%;
+  min-width: 600px; /* Ensures table remains wide enough for content */
+  border-collapse: collapse;
+}
+
+.dance-schedule th,
+.dance-schedule td {
+  padding: 1rem;
+  text-align: left;
+  border: 1px solid var(--gray);
+  font-size: 1rem;
+}
+
+.dance-schedule th {
+  background-color: var(--light-gray);
+  color: var(--black);
+  font-weight: bold;
+}
+
+.dance-schedule td {
+  background-color: var(--white);
+  color: var(--black);
+}
+
+/* Make sure table is scrollable on smaller screens */
+@media (max-width: 768px) {
+  .dance-schedule table {
+    width: 100%;
+    min-width: 421px;
+  }
+}
