@@ -1,0 +1,10 @@
+.services {
+    padding: 2rem 1rem;
+    background-color: var(--white);
+    color: var(--text-color);
+    text-align: center;
+  }
+  
+  .services h2 {
+    margin-bottom: 2rem;
+  }
