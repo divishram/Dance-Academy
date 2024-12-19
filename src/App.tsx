@@ -2,6 +2,7 @@ import NavBar from "./components/NavBar/NavBar";
 import HomeIntro from "./components/Main/HomeIntro";
 import DanceSchedule from "./components/DanceSchedule/DanceSchedule";
 import DanceServices from "./components/DanceServices/DanceServices";
+import Instructor from "./components/Instructor/Instructor";
 
 import "./App.css";
 
@@ -21,6 +22,8 @@ const App: React.FC = () => {
       <HomeIntro />
       <DanceSchedule schedule={scheduleData} />
       <DanceServices/> 
+      <Instructor/>
+
     </div>
   );
 };

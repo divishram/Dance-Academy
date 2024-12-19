@@ -1,0 +1,38 @@
+.instructors {
+    padding: 2rem 1rem;
+    background-color: var(--light-gray);
+    color: var(--text-color);
+    text-align: center;
+  }
+  
+  .instructors h2 {
+    margin-bottom: 2rem;
+  }
+  
+  .instructor-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+  }
+  
+  .instructor-card {
+    background-color: var(--white);
+    border: 1px solid var(--gray);
+    border-radius: 8px;
+    padding: 1.5rem;
+    width: 100%;
+    max-width: 300px;
+    text-align: left;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .instructor-card:hover {
+    transform: translateY(-10px);
+  }
+  
+  .instructor-card img {
+    border-radius: 8px;
+    margin-bottom: 1rem;
+  }
