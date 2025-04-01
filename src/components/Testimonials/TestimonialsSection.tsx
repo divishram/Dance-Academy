@@ -17,8 +17,7 @@ const TestimonailsSection: React.FC = () => {
     {
       imageSrc: "images/person1.webp",
       altText: "Person 1",
-      quote:
-        "This dance class is amazing! I've learned so much and had a great time.",
+      quote:"This dance class is amazing! I've learned so much and had a great time.",
       name: "Sahar",
       imageWidth: 90,
       id: 1
@@ -26,8 +25,7 @@ const TestimonailsSection: React.FC = () => {
     {
       imageSrc: "images/person2.webp",
       altText: "Person 2",
-      quote:
-        "The instructors are very professional and friendly. Highly recommend!",
+      quote:"The instructors are very professional and friendly. Highly recommend!",
       name: "Jane Smith",
       imageWidth: 50,
       id: 2
@@ -35,8 +33,7 @@ const TestimonailsSection: React.FC = () => {
     {
       imageSrc: "images/person3.webp",
       altText: "Person 3",
-      quote:
-        "I've improved my dancing skills significantly since joining these classes.",
+      quote:"I've improved my dancing skills significantly since joining these classes.",
       name: "Alice Johnson",
       imageWidth: 90,
       id: 3
