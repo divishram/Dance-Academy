@@ -3,7 +3,7 @@ import HomeIntro from "./components/Main/HomeIntro";
 import DanceSchedule from "./components/DanceSchedule/DanceSchedule";
 import DanceServices from "./components/DanceServices/DanceServices";
 import Instructor from "./components/Instructor/Instructor";
-
+import TestimonailsSection from "./components/Testimonials/TestimonialsSection";
 import "./App.css";
 
 // Sample data
@@ -23,6 +23,7 @@ const App: React.FC = () => {
       <DanceSchedule schedule={scheduleData} />
       <DanceServices/> 
       <Instructor/>
+      <TestimonailsSection/>
 
     </div>
   );
