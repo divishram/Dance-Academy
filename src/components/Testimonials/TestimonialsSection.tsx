@@ -42,6 +42,7 @@ const TestimonailsSection: React.FC = () => {
 
   return (
     <section className={styles['testimonials']}>
+        <h2 className={styles['testimonials-text']}>Testimonials</h2>
         {testimonials.map((testimonial, id) => (
             <Testimonial
                 key={id}
