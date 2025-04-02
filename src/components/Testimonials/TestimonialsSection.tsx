@@ -12,7 +12,7 @@ interface TestimonialData {
   id        : number;
 }
 
-const TestimonailsSection: React.FC = () => {
+const TestimonialsSection: React.FC = () => {
   const testimonials: TestimonialData[] = [
     {
       imageSrc: "images/person1.webp",
@@ -58,4 +58,4 @@ const TestimonailsSection: React.FC = () => {
   )
 };
 
-export default TestimonailsSection
+export default TestimonialsSection
