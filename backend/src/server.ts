@@ -1,8 +1,23 @@
-import app from './app';
 import dotenv from 'dotenv';
+import express from 'express';
+import cors from 'cors';
+import path from 'path';
+import {db, createTable} from './db'
+import bookingRoutes from './routes/bookings';
 
-dotenv.config();
 
 const PORT = process.env.PORT || 3000;
+const app = express();
+app.use(cors());
+app.use(express.json());
 
-app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
+app.use('/api/book-class', bookingRoutes)
+
+app.listen(PORT, async () => {
+    try {
+        await createTable();
+        console.log(`Server running on localhost:${PORT}`);
+    } catch(err) {
+        console.error(`Failed to create db: ${err}`);
+    }
+})
