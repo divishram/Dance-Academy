@@ -17,7 +17,8 @@ const createTable = async (): Promise<void> => {
                  id INTEGER PRIMARY KEY AUTOINCREMENT,
                  name TEXT NOT NULL,
                  email TEXT NOT NULL,
-                 classType TEXT NOT NULL
+                 classType TEXT NOT NULL,
+                 createdAt DATETIME DEFAULT CURRENT_TIMESTAMP
                 )`,
         (err) => {
           if (err) reject(err);
