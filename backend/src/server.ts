@@ -1,12 +1,11 @@
 import dotenv from 'dotenv';
 import express from 'express';
 import cors from 'cors';
-import path from 'path';
-import {db, createTable} from './db'
+import {createTable} from './db'
 import bookingRoutes from './routes/bookings';
 
-
-const PORT = process.env.PORT || 3000;
+dotenv.config();
+const PORT = process.env.PORT
 const app = express();
 app.use(cors());
 app.use(express.json());
