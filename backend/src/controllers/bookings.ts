@@ -1,7 +1,8 @@
 import { Request, Response } from 'express';
 import { validationResult } from 'express-validator';
 import sqlite3 from 'sqlite3';
-import { db } from '../db'; // Adjust the import based on your setup
+import { db } from '../db';
+import { sendBookingConfirmation } from '../utils/mailer';
 
 interface BookingRequestBody {
   name: string;
@@ -39,6 +40,7 @@ export const bookClass = async (req: Request<{}, {}, BookingRequestBody>, res: R
 
   try {
     await runInsert(stmt, [name, email, type]);
+    await sendBookingConfirmation(email, name, type);
     res.status(201).json({ message: 'Booking confirmed successfully' });
   } catch (err) {
     res.status(500).json({ message: 'Server error' });
