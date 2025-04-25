@@ -5,6 +5,7 @@ import {createTable} from './db'
 import bookingRoutes from './routes/bookings';
 import helmet from 'helmet';
 import rateLimit from 'express-rate-limit';
+import logger from './utils/logger';
 
 dotenv.config();
 const PORT = process.env.PORT
@@ -26,8 +27,8 @@ app.use('/api/book-class', limiter, bookingRoutes)
 app.listen(PORT, async () => {
     try {
         await createTable();
-        console.log(`Server running on localhost:${PORT}`);
+        logger.info(`Server running on localhost:${PORT}`);
     } catch(err) {
-        console.error(`Failed to create db: ${err}`);
+        logger.error({ err }, 'Failed to create DB');
     }
 })

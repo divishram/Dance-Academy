@@ -1,10 +1,11 @@
 import sqlite3 from "sqlite3";
 import path from "path";
+import logger from "../utils/logger";
 
 const dbPath = path.join(__dirname, "../../dance-website.db");
 const db = new sqlite3.Database(dbPath, (err) => {
   if (err) {
-    console.error("Error opening database: ", err.message);
+    logger.error({err}, "Error opening database: ");
   }
   console.log("Connected to SQLite DB");
 });

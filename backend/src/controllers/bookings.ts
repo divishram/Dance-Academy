@@ -3,6 +3,7 @@ import { validationResult } from 'express-validator';
 import sqlite3 from 'sqlite3';
 import { db } from '../db';
 import { sendBookingConfirmation } from '../utils/mailer';
+import logger from '../utils/logger';
 
 interface BookingRequestBody {
   name: string;
@@ -26,12 +27,13 @@ export const bookClass = async (req: Request<{}, {}, BookingRequestBody>, res: R
   console.log(req.body);
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
+    logger.warn({ errors: errors.array() }, 'Validation failed');
     res.status(400).json({ message: 'Validation failed', errors: errors.array() });
     return;
   }
 
   const { name, email, type } = req.body;
-  console.log(name, email, type)
+  logger.info({ name, email, type }, 'Processing booking');
 
   const stmt = db.prepare(`
     INSERT INTO bookings (name, email, classType)
