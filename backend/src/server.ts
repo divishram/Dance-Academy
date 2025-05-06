@@ -8,7 +8,7 @@ import rateLimit from 'express-rate-limit';
 import logger from './utils/logger';
 
 dotenv.config();
-const PORT = process.env.PORT
+const PORT = process.env.PORT || 3000;
 const app = express();
 app.use(helmet());
 app.use(cors());
